@@ -1094,6 +1094,7 @@ while True:
 							color=0xff0000
 							)
 					await client.get_channel(channel).send(embed=embed, tts=False)
+					await dbSave()
 
 				################ 보스 멍 처리 ################ 
 
@@ -1147,6 +1148,7 @@ while True:
 								color=0xff0000
 								)
 						await client.get_channel(channel).send(embed=embed, tts=False)
+						await dbSave()
 					else:
 						if tmp_bossTime[i] < tmp_now :
 
@@ -1166,8 +1168,10 @@ while True:
 									color=0xff0000
 									)
 							await client.get_channel(channel).send(embed=embed, tts=False)
+							await dbSave()
 						else:
 							await client.get_channel(channel).send('```' + bossData[i][0] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+							await dbSave()
 
 					
 			################ 예상 보스 타임 입력 ################ 
