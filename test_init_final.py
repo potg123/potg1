@@ -443,12 +443,12 @@ async def task():
 								tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 								tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 								tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
+								await dbSave()
 								embed = discord.Embed(
 									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
-								await dbSave()
 								
 							################ 멍 보스 ################
 							else :
@@ -461,12 +461,12 @@ async def task():
 								tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 								tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 								tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
+								await dbSave()
 								embed = discord.Embed(
 									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
-								await dbSave()
 
 		await asyncio.sleep(1) # task runs every 60 seconds
 
@@ -1092,12 +1092,12 @@ while True:
 					tmp_bossTime[i] = bossTime[i] = nextTime = now2
 					tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 					tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
+					await dbSave()
 					embed = discord.Embed(
 							description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 							color=0xff0000
 							)
 					await client.get_channel(channel).send(embed=embed, tts=False)
-					await dbSave()
 
 				################ 보스 멍 처리 ################ 
 
