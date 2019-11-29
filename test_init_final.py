@@ -448,6 +448,8 @@ async def task():
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
+								await dbSave()
+								
 							################ 멍 보스 ################
 							else :
 								await client.get_channel(channel).send("```" + bossData[i][0] + ' 멍 입니다.```')
@@ -464,6 +466,7 @@ async def task():
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
+								await dbSave()
 
 		await asyncio.sleep(1) # task runs every 60 seconds
 
