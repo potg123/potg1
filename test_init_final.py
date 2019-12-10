@@ -742,7 +742,7 @@ async def on_ready():
 
 	# 디스코드에는 현재 본인이 어떤 게임을 플레이하는지 보여주는 기능이 있습니다.
 	# 이 기능을 사용하여 봇의 상태를 간단하게 출력해줄 수 있습니다.
-	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="!메뉴", type=1), afk=False)
+	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="야스", type=1), afk=False)
 
 while True:
 	# 봇이 새로운 메시지를 수신했을때 동작되는 코드입니다.
@@ -1667,8 +1667,6 @@ while True:
 				
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
-				await dbSave()
-
 			################ 보스타임 출력(고정보스포함) ################ 
 
 			if message.content == '!보스탐':
@@ -1776,7 +1774,6 @@ while True:
 				
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
-				await dbSave()
 
 			################ 현재시간 확인 ################ 
 
